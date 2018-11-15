@@ -1,0 +1,46 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.3'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
+        classpath "com.github.dcendents:android-maven-gradle-plugin:1.4.1"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://maven.google.com' }
+        jcenter()
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext{
+    // Keep all versioning in one place
+    // to keep all aar modules in sync
+    minSdkVersion = 19
+    compileSdkVersion = 27
+    buildToolVersion = '27.0.3'
+    targetSdkVersion = 27
+
+    supportLibVersion = '27.1.1'
+    constraintLayoutVersion = '1.1.2'
+    volleyVersion = '1.1.1'
+
+    gpsVersion = '15.0.1'
+    awsVersion = '2.2.22'
+    fabricToolsVersion = '1.25.4'
+    androidGoogleMapsUtil = '0.5'
+}
